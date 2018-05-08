@@ -1,0 +1,46 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <ng-container matColumnDef="eventDate">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let history"> {{history.eventDate}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="task_id">
+      <mat-header-cell *matHeaderCellDef> Task id </mat-header-cell>
+      <mat-cell *matCellDef="let history"> {{history.task_id}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="user">
+      <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+      <mat-cell *matCellDef="let history"> {{history.user}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="event">
+      <mat-header-cell *matHeaderCellDef> Event </mat-header-cell>
+      <mat-cell *matCellDef="let history"> {{history.event}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div *ngIf="pages!=0">
+    <button   mat-button (click) = "previousPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_left</i></mat-icon>
+    </button>
+    <button  mat-button (click) = "nextPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_right</i></mat-icon>
+    </button>
+    <mat-form-field class="select">
+    <mat-select [(ngModel)]="size" (click) = "remember()">
+      <mat-option *ngFor="let e of delimiters" [value]="e.value" (click) = "resize()">
+        {{ e.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <label >{{page}} - {{pages}}</label>
+  </div>
+</div>

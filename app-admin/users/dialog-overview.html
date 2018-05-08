@@ -1,0 +1,22 @@
+<form class="form">
+  <div>
+    <mat-form-field>
+      <input matInput #name placeholder="Name" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <textarea matInput #email placeholder="Email" matTextareaAutosize matAutosizeMinRows="1" matAutosizeMaxRows="2" required></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <textarea matInput #desc placeholder="Describe" matTextareaAutosize matAutosizeMinRows="3" matAutosizeMaxRows="5" required></textarea>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-icon-button>
+     <mat-icon class="example-icon" (click) = "addUser(name.value , email.value , desc.value)">add</mat-icon>
+  </button>
+  </div>
+</form>

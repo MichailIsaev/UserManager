@@ -1,0 +1,17 @@
+<!-- *ngIf="size!=0" -->
+<div *ngIf="pages!=0" class = "paginator">
+  <button   mat-button (click) = "back()">
+      <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_left</i></mat-icon>
+  </button>
+  <button  mat-button (click) = "next()">
+      <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_right</i></mat-icon>
+  </button>
+  <mat-form-field class="select">
+  <mat-select [(ngModel)]="size" >
+    <mat-option *ngFor="let e of delimiters" [value]="e.value" (click) = "resize()">
+      {{ e.value }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  <label >{{page}} - {{pages}}</label>
+</div>

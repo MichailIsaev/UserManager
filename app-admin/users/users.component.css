@@ -1,0 +1,14 @@
+.mat-column-delete {
+  overflow: visible;
+}
+.example-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 600px;
+
+}

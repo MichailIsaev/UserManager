@@ -1,0 +1,41 @@
+<mat-sidenav-container class="example-container" (backdropClick)="close('backdrop')">
+  <mat-sidenav #sidenav (mouseover)="sidenav.open()" (mouseout)="close('toggle button')" (keydown.escape)="close('escape')" disableClose>
+
+
+    <H1>
+      <p>
+      <button mat-icon-button routerLink="/users" routerLinkActive="active" (click) = "setCurrent('Users')" >
+     <mat-icon class="example-icon">people</mat-icon>
+    </button>
+    </p>
+    <p>
+    <button mat-icon-button routerLink="/errors" routerLinkActive="active" (click) = "setCurrent('Error records')">
+     <mat-icon class="example-icon">error</mat-icon>
+    </button>
+    </p>
+    <p>
+    <button mat-icon-button routerLink="/history" routerLinkActive="active" (click) = "setCurrent('History')">
+     <mat-icon class="example-icon">history</mat-icon>
+    </button>
+    </p>
+    <p>
+      <button mat-icon-button (click)="logout()">
+        <mat-icon class="example-icon">exit_to_app</mat-icon>
+      </button>
+    </p>
+  </H1>
+
+
+
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar (mouseover)="sidenav.open()" color="warn">
+      <mat-toolbar-row>
+        <label>{{current}}</label>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <app-view-component></app-view-component>
+  </mat-sidenav-content>
+</mat-sidenav-container>

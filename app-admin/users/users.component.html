@@ -1,0 +1,68 @@
+<button mat-icon-button (click)="openDialog()">
+ <mat-icon class="example-icon">add</mat-icon>
+</button>
+<!--<mat-form-field>
+  <input matInput #name placeholder="By name" (keydown) = "findByName(name.value , page , size)">
+</mat-form-field>-->
+
+<mat-form-field>
+  <input matInput #mail placeholder="By mail" (keyup.enter) = "findByMail(mail.value , page , size)">
+</mat-form-field>
+
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.name}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="authority">
+      <mat-header-cell *matHeaderCellDef> Authority </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.authority}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{user.description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="warn">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button mat-icon-button color="warn" (click) = "deleteRow(row)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div *ngIf="pages!=0" class = "paginator">
+    <button   mat-button (click) = "previousPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_left</i></mat-icon>
+    </button>
+    <button  mat-button (click) = "nextPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_right</i></mat-icon>
+    </button>
+    <mat-form-field class="select">
+    <mat-select [(ngModel)]="size" >
+      <mat-option *ngFor="let e of delimiters" [value]="e.value" (click) = "resize()">
+        {{ e.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <label >{{page}} - {{pages}}</label>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-card class="card">
+  <H1>
+Are you the ADMIN?
+</H1>
+  <div>
+    <mat-form-field class = "username">
+      <input matInput #username placeholder="Enter username" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class = "password">
+      <input matInput #password placeholder="Enter password" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <button mat-button (click) = "loginUser(username.value , password.value )">
+        Log in
+    </button>
+  </div>
+
+</mat-card>

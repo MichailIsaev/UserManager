@@ -1,0 +1,13 @@
+.card {
+  max-width: 300px;
+  left : 35%;
+  position : absolute;
+  top : 30%;
+}
+
+.username{
+  min-width : 250px;
+}
+.password{
+  min-width : 250px;
+}

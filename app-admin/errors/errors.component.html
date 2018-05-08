@@ -1,0 +1,45 @@
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef> Id </mat-header-cell>
+      <mat-cell *matCellDef="let error"> {{error.id}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="exceptionClass">
+      <mat-header-cell *matHeaderCellDef> Class </mat-header-cell>
+      <mat-cell *matCellDef="let error"> {{error.exceptionClass}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="stackTrace">
+      <mat-header-cell *matHeaderCellDef> StackTrace </mat-header-cell>
+      <mat-cell *matCellDef="let error"> {{error.stackTrace}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+      <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+      <mat-cell *matCellDef="let error"> {{error.date}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <div *ngIf="pages!=0" >
+    <button   mat-button (click) = "previousPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_left</i></mat-icon>
+    </button>
+    <button  mat-button (click) = "nextPage()">
+        <mat-icon class="example-icon"><i class="material-icons">keyboard_arrow_right</i></mat-icon>
+    </button>
+    <mat-form-field class="select">
+    <mat-select [(ngModel)]="size" (click) = "remember()">
+      <mat-option *ngFor="let e of delimiters" [value]="e.value" (click) = "resize()">
+        {{ e.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+    <label >{{page}} - {{pages}}</label>
+  </div>
+</div>

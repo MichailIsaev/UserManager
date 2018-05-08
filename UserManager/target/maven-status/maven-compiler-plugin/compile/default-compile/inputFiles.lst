@@ -1,0 +1,15 @@
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/User.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/UserController.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/secutiry/Role.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/InterAction.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/web/StatelessAuthFilter.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/UserRestController.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/secutiry/services/TokenHandler.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/MainController.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/secutiry/services/TokenAuthService.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/web/UserAuthentication.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/controllers/web/AdminAuthFilter.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/repositories/UserRepository.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/config/SecurityConfiguration.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/secutiry/services/UserService.java
+/Users/michailisaev/Desktop/Manager/UserManager/src/main/java/com/config/DataBaseConfiguration.java

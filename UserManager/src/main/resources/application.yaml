@@ -1,0 +1,19 @@
+
+
+server.port: 55555
+
+management:
+  security:
+    enabled: true
+
+
+security:
+  ignored: false
+
+
+spring:
+  resources:
+    chain:
+      enabled: true
+
+
